@@ -1,0 +1,114 @@
+/* IE Stylesheet - LTE 8 */
+
+/* Table of Contents
+
+	- Defaults
+	- Site Header
+	- Header Navigation
+	- Social Media Icons
+	- Content Area
+	- Site Footer
+
+*/
+
+/*
+Defaults
+---------------------------------------------------------------------------------------------------- */
+
+blockquote:before {
+	content: "\201C";
+}
+
+/*
+Site Header
+---------------------------------------------------------------------------------------------------- */
+
+.header-widget-right {
+	*display: none;
+}
+
+.header-widget-right .user-profile .pagelink:before {
+	content: '\25BA';
+}
+
+.site-header .search-form {
+	*display: none;
+}
+
+.site-header .search-form input[type="search"] {
+	z-index: 9998;
+}
+
+.site-header .search-form input[type="submit"] {
+	z-index: 9999;
+}
+
+/*
+Header Navigation
+---------------------------------------------------------------------------------------------------- */
+
+#header-menu-icon {
+	*background: #cf2521;
+	height: 31px;
+}
+
+#header-menu-icon:before {
+	content: '\2630';
+}
+
+#header-menu-icon:hover:before,
+#header-menu-icon:active:before {	
+	content: '\2630';
+}
+
+/*
+Social Media Icons
+---------------------------------------------------------------------------------------------------- */
+
+/* IE6 and IE7 float fix */
+.widget_nav_menu .social {
+	*display: block;
+	*float: right;
+}
+
+/* IE6-8 background size fix */
+.widget_nav_menu .social.facebook a {
+	 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://www.synavista.com/clients/genesis-templates/wp-content/themes/201310-synavista-template-html5/images/social-facebook.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://www.synavista.com/clients/genesis-templates/wp-content/themes/201310-synavista-template-html5/images/social-facebook.png', sizingMethod='scale')";
+}
+
+.widget_nav_menu .social.twitter a {
+	 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://www.synavista.com/clients/genesis-templates/wp-content/themes/201310-synavista-template-html5/images/social-twitter.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://www.synavista.com/clients/genesis-templates/wp-content/themes/201310-synavista-template-html5/images/social-twitter.png', sizingMethod='scale')";
+}
+
+.widget_nav_menu .social.google-plus a {
+	 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://www.synavista.com/clients/genesis-templates/wp-content/themes/201310-synavista-template-html5/images/social-googleplus.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://www.synavista.com/clients/genesis-templates/wp-content/themes/201310-synavista-template-html5/images/social-googleplus.png', sizingMethod='scale')";
+}
+
+.widget_nav_menu .social.youtube a {
+	 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://www.synavista.com/clients/genesis-templates/wp-content/themes/201310-synavista-template-html5/images/social-youtube.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://www.synavista.com/clients/genesis-templates/wp-content/themes/201310-synavista-template-html5/images/social-youtube.png', sizingMethod='scale')";
+}
+
+.widget_nav_menu .social.linked-in a {
+	 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://www.synavista.com/clients/genesis-templates/wp-content/themes/201310-synavista-template-html5/images/social-linkedin.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://www.synavista.com/clients/genesis-templates/wp-content/themes/201310-synavista-template-html5/images/social-linkedin.png', sizingMethod='scale')";
+}
+
+/*
+Content Area
+---------------------------------------------------------------------------------------------------- */
+
+.entry-comments-link:before {
+	content: "\2014";
+}
+
+/*
+Site Footer
+---------------------------------------------------------------------------------------------------- */
+
+a.return-to-top:before {
+	content: '\25B2';
+}

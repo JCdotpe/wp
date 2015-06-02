@@ -1,0 +1,24 @@
+/* CSS for Infinite Scroll 
+
+This is in a separate file so that users can easily enable/disable infinite scroll
+and have the corresponding CSS respond accordingly */
+
+.masonry .archive-pagination {
+	display: none;
+}
+
+#infscr-loading {
+	clear: both;
+	font-size: 12px;
+	font-size: 1.rem;
+	margin: 0 auto;
+	position: absolute;
+	text-align: center;
+	top: 100%;
+	width: 100%;
+	z-index: 9999;
+}
+
+#infscr-loading img {
+	display: none;
+}

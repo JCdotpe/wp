@@ -110,26 +110,7 @@ add_action( 'genesis_footer', 'pin_it_footer' );
 function pin_it_footer() {
     echo '<a href="#top" rel="nofollow" class="return-to-top"></a><div class="creds"><p><small>&copy; ' . date('Y') . ' ';
 	echo bloginfo('Name');
-	echo ' &middot; <a href="#">Facebook</a> - <a href="#">Twitter</a> - <a href="#">Instagram</a> &middot; <a href="';
+	echo ' &middot; <a href="http://www.media-cairn.com/themes/pin-it-child-theme/" target="_blank">Pin It</a> - <a href="http://www.shareasale.com/r.cfm?b=241369&u=618351&m=28169&urllink=&afftrack=" target="_blank">Genesis</a> - <a href="http://www.wordpress.org/" target="_blank">WordPress</a> &middot; <a href="';
 	echo bloginfo('url');
-	echo '#">Android</a> - <a href="#">iOS</a> - <a href="#">Windows Phone</a></small></p></div>';
+	echo '/wp-admin/">Admin</a></small></p></div>';
 }
-
-// Remove read more
-add_filter( 'get_the_content_more_link', 'child_read_more_link' );
-function child_read_more_link() {
-return '';
-}
-
-
-// Custom credit footer
-add_filter( 'genesis_post_info', 'cd_post_info_filter' );
-function cd_post_info_filter( $post_info ) {
-	$entry_author = get_avatar( get_the_author_meta( 'email' ), 64 );
-	$author_link = get_author_posts_url( get_the_author_meta( 'ID' ) );
-	$post_info = sprintf( '<span class="author-avatar"><a href="%s">%s</a></span>', $author_link, $entry_author );
-	$post_info .= '[post_author_posts_link]';
-	$post_info .= '[post_categories before=""]';
-	return $post_info;
-}
-

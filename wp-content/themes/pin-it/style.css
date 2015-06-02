@@ -1,9 +1,9 @@
 /*
-	Theme Name: Hashtag Child Theme
-	Description: Hashtag child theme created for the Genesis Framework.
-	Author: JCdotpe
-	Author URI: http://jc.pe/
-	Version: 0.1
+	Theme Name: Pin It Child Theme
+	Description: Pin It is a Pinterest-style child theme created for the Genesis Framework.
+	Author: MediaCairn Design Studio
+	Author URI: http://www.media-cairn.com/
+	Version: 3.0
  
 	Tags: gray, silver, white, light, fluid-width, sticky-posts, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, mobile-responsive, lazy-scrolling, masonry
 
@@ -628,10 +628,6 @@ Common Classes
 
 .avatar {
 	float: left;
-	height: 30px;
-	width: 30px;
-	border-radius: 50%;
-	margin-right: 5px;
 }
 
 .alignleft .avatar {
@@ -1634,7 +1630,8 @@ li.comment {
 
 .masonry .entry-content {
 	clear: both;
-	padding: 0;
+	padding: 15px;
+	padding: 1.5rem;
 }
 
 .masonry .entry-image {
@@ -1653,12 +1650,8 @@ li.comment {
 	font-size: 1.4rem;
 	font-weight: 700;
 	line-height: 1.2;
-	margin: 0;
-}
-
-.masonry .entry-content .entry-title {
-	border: 1px solid #ddd;
-	padding: 5px 12px;
+	margin-bottom: 10px;
+	margin-bottom: 1rem;
 }
 
 .masonry .entry-content .entry-title a:hover {
@@ -1667,7 +1660,6 @@ li.comment {
 
 .masonry p {
 	margin: 0;
-	padding: 5px 12px;
 }
 
 .home-stamp p {

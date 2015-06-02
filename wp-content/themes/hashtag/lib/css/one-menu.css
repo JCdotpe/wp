@@ -1,0 +1,29 @@
+/* CSS for one navigation menu
+
+Adjust the padding on .site-inner when either the primary or secondary menu is used.
+
+*/
+
+.nav-primary .wrap.sticky,
+.nav-secondary .wrap.sticky {
+	top: 47px;
+}
+
+.site-inner.sticky {
+	padding-top: 105px;
+	padding-top: 10.5rem; 
+}
+
+@media only screen and (max-width: 800px) {
+	
+	.site-inner.sticky {
+		padding-top: 193px;
+		padding-top: 19.3rem; 
+	}
+	
+	.nav-primary .wrap.sticky,
+	.nav-secondary .wrap.sticky {
+		top: 134px;
+	}
+
+}

@@ -1,0 +1,411 @@
+/* CSS for Navigational Menus
+
+/* Table of Contents
+
+	- Mobile, Primary and Secondary Navigation Menu
+	- Header Navigation Menu
+	- Primary Navigation Menu
+	- Secondary Navigation Menu
+*/
+
+/*
+Mobile, Primary and Secondary Navigation Menu
+---------------------------------------------------------------------------------------------------- */
+
+.nav-mobile {
+	display: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+	/* Mobile Navigation Menu Icon properties */
+	
+	#mobile-menu-icon {
+		background-color: #222;
+		border-bottom: 1px solid #222;
+		box-shadow: inset 0 -7px 10px rgba(0,0,0,0.05);
+		cursor: pointer;
+		display: block;
+		padding: 8px;
+		padding: 0.8rem;
+		text-align: center;
+	}
+	
+	#mobile-menu-icon::before {
+		color: #eee;
+		content: 'Mobile Menu \2630';
+	}
+	
+	#mobile-menu-icon:hover::before {
+		color: #eee;
+		content: 'Mobile Menu \2637';
+	}
+	
+	#mobile-menu-icon:active::before {
+		color: #fff;
+		content: 'Mobile Menu \2637';
+	}
+	
+	/* Hide Mobile, Primary and Secondary Navigation Menus until toggled via script */
+	
+	.menu-mobile,
+	.menu-primary,
+	.menu-secondary {
+		display: none;
+	}
+	
+	/* Mobile Navigation Menu misc properties */
+	
+	.nav-mobile,
+	.nav-primary,
+	.nav-secondary {
+		background: url(images/bg.png) repeat center top #f0eeef;
+		clear: both;
+		color: #999;
+		display: block;
+		line-height: 1.5;
+		width: 100%;
+		z-index: 9999;
+	}
+	
+	#menu-mobile-navigation,
+	#menu-primary-navigation,
+	#menu-secondary-navigation {
+		background-color: #fff;
+		border-radius: 3px;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+		margin: 10px;
+		margin: 1rem;
+		padding: 5px 5px 3px;
+		padding: 0.5rem 0.5rem 0.3rem;
+		width: auto;
+	}
+
+	.nav-mobile .menu-item,
+	.nav-primary .menu-item,
+	.nav-secondary .menu-item {
+		display: block;
+		text-align: left;
+	}
+
+	.nav-mobile li {
+		position: relative;
+	}
+	
+	.nav-mobile a,
+	.nav-primary a,
+	.nav-secondary a {
+		border-radius: 3px;
+		color: #999;
+		display: block;
+		font-size: 15px;
+		font-size: 1.5rem;
+		margin: 0 0 2px 0;
+		margin: 0 0 0.2rem 0;
+		padding: 4px 10px;
+		padding: 0.4rem 1rem;
+		position: relative;
+	}
+
+	.nav-mobile a:hover,
+	.nav-mobile .current-menu-item > a,
+	.nav-mobile .sub-menu .current-menu-item > a:hover,
+	.nav-primary a:hover,
+	.nav-primary .current-menu-item > a,
+	.nav-primary .sub-menu .current-menu-item > a:hover,
+	.nav-secondary a:hover,
+	.nav-secondary .current-menu-item > a,
+	.nav-secondary .sub-menu .current-menu-item > a:hover {
+		background-color: #eee;
+		box-shadow: inset 0 0 2px rgba(0,0,0,0.15);
+		color: #444;
+	}
+	
+	.nav-mobile .sub-menu,
+	.nav-primary .sub-menu,
+	.nav-secondary .sub-menu {
+		border-radius: 0;
+		box-shadow: none;
+		left: 0px;
+		margin: 0;
+		opacity: 1;
+		padding: 0 0 0 10px;
+		padding: 0 0 0 1rem;
+		position: relative;
+		-webkit-transition: opacity .4s ease-in-out;
+		-moz-transition:    opacity .4s ease-in-out;
+		-ms-transition:     opacity .4s ease-in-out;
+		-o-transition:      opacity .4s ease-in-out;
+		transition:         opacity .4s ease-in-out;
+		width: 100%;
+		z-index: 99;
+	}
+
+	.nav-mobile .sub-menu a,
+	.nav-primary .sub-menu a,
+	.nav-secondary .sub-menu a {
+		font-size: 13px;
+		font-size: 1.3rem;
+		padding: 4px 10px;
+		padding: 0.4rem 1rem;
+		position: relative;
+		width: 100%;
+	}
+
+	.nav-mobile .sub-menu a::before,
+	.nav-primary .sub-menu a::before,
+	.nav-secondary .sub-menu a::before {
+		content: "- ";
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+		
+	.nav-mobile .sub-menu .sub-menu,
+	.nav-primary .sub-menu .sub-menu,
+	.nav-secondary .sub-menu .sub-menu {
+		margin: 0;
+		padding: 0 0 0 20px;
+		padding: 0 0 0 2rem;
+	}
+
+	.nav-mobile .menu-item:hover,
+	.nav-primary .menu-item:hover,
+	.nav-secondary .menu-item:hover {
+		position: static;
+	}
+
+	.nav-mobile .menu-item:hover > .sub-menu,
+	.nav-primary .menu-item:hover > .sub-menu,
+	.nav-secondary .menu-item:hover > .sub-menu {
+		left: auto;
+		opacity: 1;
+	}
+	
+}
+
+
+/*
+Header Navigation Menu
+---------------------------------------------------------------------------------------------------- */
+	
+	/* Header Navigation Menu Icon properties */
+	
+	#header-menu-icon {
+		background: #fff;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		box-shadow: inset 0 -7px 10px rgba(0,0,0,0.05);
+		cursor: pointer;
+		display: block;
+		font-size: 19px;
+		font-size: 1.9rem;
+		max-width: 38px;
+		padding: 0 0 1px 1px;
+		padding: 0 0 0.1rem 0.1rem;
+		text-align: center;
+	}
+	
+	#header-menu-icon:hover,
+	#header-menu-icon.active {
+		background: #CF2521;
+		border: 1px solid #444;
+		box-shadow: inset 0 7px 10px rgba(0,0,0,0.15);
+	}
+
+	#header-menu-icon::before {
+		color: #ccc;
+		content: '\2630';
+		font-weight: bold;
+		letter-spacing: 1px;
+	}
+	
+	#header-menu-icon:hover::before,
+	#header-menu-icon:active::before,
+	#header-menu-icon.active:before {	
+		color: #fff;
+		content: '\2630';
+	}
+		
+	/* Hide Header Navigation Menu until it's toggled via script */
+	
+	#menu-header-navigation,
+	.header-menu-arrow {
+		display: none;
+	}
+	
+	/* Header Navigation Menu misc properties */
+	
+	.menu-header-navigation-container {
+		clear: both;
+		color: #999;
+		float: left;
+		line-height: 1.5;
+		position: relative;
+		width: 100%;
+		z-index: 9998;
+	}
+	
+	.header-menu-arrow {
+		background: url(../../images/header-menu-bg.png) no-repeat 7px 0;
+		height: 15px;
+		position: relative;
+		z-index: 9999;
+	}
+	
+	.menu-header-navigation-container .menu {
+		background: #fff;
+		border-radius: 3px;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+		overflow: hidden;
+		padding: 8px 0 8px 8px;
+		padding: 0.8rem 0 0.8rem 0.8rem;
+	}
+	
+	.menu-header-navigation-container .menu-item {
+		display: block;
+		float: left;
+		text-align: left;
+		width: 33.33%;
+	}
+
+	.menu-header-navigation-container a {
+		border-radius: 3px;
+		color: #8f8f8f;
+		display: block;
+		font-size: 13px;
+		font-weight: bold;
+		margin: 0 8px 2px 0;
+		margin: 0 0.8rem 0.2rem 0;
+		padding: 4px 10px;
+		padding: 0.4rem 1rem;
+		position: relative;
+	}
+
+	.menu-header-navigation-container a:hover,
+	.menu-header-navigation-container .current-menu-item > a,
+	.menu-header-navigation-container .sub-menu .current-menu-item > a:hover {
+		background-color: #eee;
+		box-shadow: inset 0 0 2px rgba(0,0,0,0.15);
+		color: #444;
+	}
+
+	.menu-header-navigation-container .sub-menu .current-menu-item > a {
+		color: #999;
+	}
+
+	.menu-header-navigation-container > .menu-item > a {
+		text-transform: uppercase;
+	}
+
+	.menu-header-navigation-container .sub-menu {
+		display: none;
+		left: 0px;
+		opacity: 1;
+		position: relative;
+		-webkit-transition: opacity .4s ease-in-out;
+		-moz-transition:    opacity .4s ease-in-out;
+		-ms-transition:     opacity .4s ease-in-out;
+		-o-transition:      opacity .4s ease-in-out;
+		transition:         opacity .4s ease-in-out;
+		width: 100%;
+		z-index: 99;
+	}
+
+	.menu-header-navigation-container .menu-item:hover {
+		position: static;
+	}
+
+@media only screen and (max-width: 768px) {
+		
+	.menu-header-navigation-container .menu-item {
+		display: block;
+		float: none;
+		text-align: left;
+		width: 100%;
+	}
+	
+}
+
+
+/*
+Primary and Secondary Navigation Menu
+---------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+
+	/* Primary and Secondary Navigation Menu Icon properties */
+	
+	#primary-menu-icon,
+	#secondary-menu-icon {
+		background-color: #fff;
+		box-shadow: inset 0 -7px 10px rgba(0,0,0,0.05);
+		cursor: pointer;
+		display: block;
+		padding: 8px;
+		padding: 0.8rem;
+		text-align: center;
+	}
+	
+	#primary-menu-icon.active,
+	#secondary-menu-icon.active {
+		background: #CF2521;
+	}
+
+	#primary-menu-icon::before,
+	#secondary-menu-icon::before {
+		color: #8f8f8f;
+		content: 'Primary Menu \2630';
+	}
+	
+	#primary-menu-icon:hover::before,
+	#secondary-menu-icon:hover::before {
+		color: #8f8f8f;
+		content: 'Primary Menu \2637';
+	}
+	
+	#primary-menu-icon:active::before,
+	#secondary-menu-icon:active::before,
+	#primary-menu-icon.active::before,
+	#secondary-menu-icon.active::before {
+		color: #fff;
+		content: 'Primary Menu \2637';
+	}
+		
+	/* Primary and Secondary Navigation Menu misc properties */
+	
+	.nav-primary,
+	.nav-secondary {
+		clear: both;
+		color: #8f8f8f;
+		line-height: 1.5;
+		width: 100%;
+		z-index: 9998;
+	}
+	
+		
+/*
+Secondary Navigation Menu
+---------------------------------------------------------------------------------------------------- */
+
+	/* Secondary Navigation Menu Icon properties */
+  
+	#secondary-menu-icon::before {
+		content: 'Secondary Menu \2630';
+	}
+	
+	#secondary-menu-icon:hover::before {
+		content: 'Secondary Menu \2637';
+	}
+	
+	#secondary-menu-icon:active::before,
+	#secondary-menu-icon.active::before {
+		content: 'Secondary Menu \2637';
+	}
+	
+	/* Secondary Navigation Menu misc properties */
+	
+	.nav-secondary {
+		z-index: 9997;
+	}
+	
+}
