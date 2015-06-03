@@ -1639,6 +1639,7 @@ li.comment {
 
 .masonry .entry-image {
 	margin: 0;
+	border-bottom: 1px solid #ddd;
 }
 
 .masonry .entry-image:hover {
@@ -1657,7 +1658,6 @@ li.comment {
 }
 
 .masonry .entry-content .entry-title {
-	border: 1px solid #ddd;
 	padding: 5px 12px;
 }
 
@@ -2116,4 +2116,8 @@ Media Queries
 		width: 100%;
 	}
 	
+}
+
+.read-more {
+	border-top: 1px solid #ddd;
 }
