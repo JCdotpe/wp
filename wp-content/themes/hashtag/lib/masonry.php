@@ -49,6 +49,7 @@ function masonry_layout_change() {
 		add_action( 'genesis_entry_content', 'genesis_do_post_title' );
 		add_action( 'genesis_entry_content', 'genesis_do_post_content' );
 		//add_action( 'genesis_entry_footer', 'genesis_post_meta' );
+		remove_action( 'genesis_entry_content', 'genesis_do_post_permalink', 14 );
 		add_action( 'genesis_entry_footer', 'genesis_post_info', 12 );
 	}
 }

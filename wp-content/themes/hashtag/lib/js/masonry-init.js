@@ -13,6 +13,9 @@ jQuery(function($) {
 
 
 jQuery(document).ready(function() {
+
+
+
     jQuery('.entry-content p').each(function() {
         var $this = jQuery(this);
         if($this.html().replace(/\s|&nbsp;/g, '').length == 0) {
@@ -22,4 +25,20 @@ jQuery(document).ready(function() {
         	$this.addClass("read-more");
         }
     });
+
+
+    jQuery('.entry-content').each(function() {
+    	var $this = jQuery(this);
+
+    	if($this.find("h1.entry-title").length) {
+
+    	}
+    	else{
+    		$this.find("p").removeClass("read-more");
+    	}
+
+
+	});
+    	
+
 });
