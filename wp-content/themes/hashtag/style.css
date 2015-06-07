@@ -1448,6 +1448,14 @@ Content Area
 	margin-bottom: 2rem;
 }
 
+.entry-header,
+.entry-header a {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
 .entry-footer .entry-meta {
 	border-top: 1px solid #ccc;
 	margin: 15px -20px 0;
@@ -1639,7 +1647,9 @@ li.comment {
 
 .masonry .entry-image {
 	margin: 0;
-	border-bottom: 1px solid #ddd;
+	padding: 0;
+	display: block;
+	position: relative;
 }
 
 .masonry .entry-image:hover {
@@ -1659,6 +1669,7 @@ li.comment {
 
 .masonry .entry-content .entry-title {
 	padding: 5px 12px;
+	border-bottom: 1px solid #ddd;
 }
 
 .masonry .entry-content .entry-title a:hover {
@@ -1668,6 +1679,10 @@ li.comment {
 .masonry p {
 	margin: 0;
 	padding: 5px 12px;
+}
+
+p:empty  {
+  display: none;
 }
 
 .home-stamp p {
@@ -1680,7 +1695,6 @@ li.comment {
 }
 
 .masonry .entry-footer {
-	border-top: 1px solid #ddd;
 	padding: 10px 15px;
 	padding: 1rem 1.5rem;
 }
@@ -2118,6 +2132,11 @@ Media Queries
 	
 }
 
-.read-more {
-	border-top: 1px solid #ddd;
+
+.excerpt-p {
+	border-bottom: 1px solid #ddd;
+}
+
+.entry-footer:hover{
+	background: #f1f1f1;
 }

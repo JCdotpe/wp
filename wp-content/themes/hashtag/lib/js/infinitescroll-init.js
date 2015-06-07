@@ -1,6 +1,6 @@
 jQuery(function($){
     var $container = $('.content');
- 
+    
     $container.infinitescroll({
         navSelector  : '.archive-pagination',    // selector for the paged navigation
         nextSelector : '.archive-pagination .pagination-next a',  // selector for the NEXT link (to page 2)
@@ -11,9 +11,10 @@ jQuery(function($){
             speed: 'fast'
         },
     },
- 
+      
         // trigger Masonry as a callback
         function( newElements ) {
+
             // hide new items while they are loading
             var $newElems = $( newElements ).css({ opacity: 0 });
             // ensure that images load before adding to masonry layout
@@ -21,7 +22,18 @@ jQuery(function($){
                 // show elems now they're ready
                 $newElems.animate({ opacity: 1 });
                 $container.masonry( 'appended', $newElems, true );
+                
             });
+
         }
+
     );
+
 });
+
+
+
+
+
+
+    

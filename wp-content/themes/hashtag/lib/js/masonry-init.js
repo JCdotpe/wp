@@ -11,10 +11,7 @@ jQuery(function($) {
 });
 
 
-
 jQuery(document).ready(function() {
-
-
 
     jQuery('.entry-content p').each(function() {
         var $this = jQuery(this);
@@ -22,23 +19,23 @@ jQuery(document).ready(function() {
             $this.remove();
         }
         else{
-        	$this.addClass("read-more");
+        	$this.addClass("excerpt-p");
         }
     });
 
-
-    jQuery('.entry-content').each(function() {
-    	var $this = jQuery(this);
-
-    	if($this.find("h1.entry-title").length) {
-
-    	}
-    	else{
-    		$this.find("p").removeClass("read-more");
-    	}
+});
 
 
-	});
-    	
+jQuery(document).scroll(function(e){
+    
+    jQuery('.entry-content p').each(function() {
+        var $this = jQuery(this);
+        if($this.html().replace(/\s|&nbsp;/g, '').length == 0) {
+            $this.remove();
+        }
+        else{
+        	$this.addClass("excerpt-p");
+        }
+    });
 
 });

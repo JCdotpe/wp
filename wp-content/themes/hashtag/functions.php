@@ -133,3 +133,9 @@ function cd_post_info_filter( $post_info ) {
 	return $post_info;
 }
 
+
+add_filter( 'excerpt_length', 'sp_excerpt_length' );
+function sp_excerpt_length( $length ) {
+	echo "string";
+	//return 50; // pull first 50 words
+}

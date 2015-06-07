@@ -53,3 +53,4 @@ function masonry_layout_change() {
 		add_action( 'genesis_entry_footer', 'genesis_post_info', 12 );
 	}
 }
+
