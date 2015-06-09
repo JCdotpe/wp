@@ -1,11 +1,11 @@
 /* # Genesis Sample Child Theme  
-Theme Name: Genesis Sample Theme  
-Theme URI: http://my.studiopress.com/themes/genesis/  
+Theme Name: CTR Genesis Theme  
+Theme URI: http://jc.pe/  
 Description: This is the sample theme created for the Genesis Framework.   
-Author: StudioPress  
-Author URI: http://www.studiopress.com/  
+Author: JCdotpe  
+Author URI: http://jc.pe/  
 Template: genesis  
-Template Version: 2.1.2  
+Template Version: 1.0
 Tags: black, orange, white, one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-menu, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready  
 License: GPL-2.0+  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
@@ -167,6 +167,10 @@ a {
 	text-decoration: none;
 }
 
+a:visited {
+  color: #609;
+}
+
 a:hover {
 	text-decoration: underline;
 }
@@ -234,23 +238,23 @@ h1 {
 }
 
 h2 {
-	font-size: 30px;
+	font-size: 26px;
 }
 
 h3 {
-	font-size: 24px;
+	font-size: 22px;
 }
 
 h4 {
-	font-size: 20px;
-}
-
-h5 {
 	font-size: 18px;
 }
 
+h5 {
+	font-size: 14px;
+}
+
 h6 {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 /* ## Objects
@@ -401,6 +405,10 @@ input:hover[type="submit"],
 	color: #fff;
 }
 
+.entry-content {
+	clear: both;
+}
+
 .entry-content .button:hover {
 	color: #fff;
 }
@@ -462,14 +470,12 @@ th {
 .site-inner,
 .wrap {
 	margin: 0 auto;
-	max-width: 980px;
+	max-width: 1200px;
 }
 
 .site-inner {
 	clear: both;
 	padding-top: 20px;
-	border-left: 1px solid #EBEBEB;
-	border-right: 1px solid #EBEBEB;
 }
 
 /* ## Column Widths and Positions
@@ -519,8 +525,7 @@ th {
 
 .sidebar-primary {
 	float: right;
-	width: 240px;
-	box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+	width: 340px;
 }
 
 .sidebar-content .sidebar-primary,
@@ -903,9 +908,7 @@ img.alignright,
 }
 
 .site-description {
-	font-size: 16px;
-	font-weight: 300;
-	line-height: 1.5;
+	display: none;
 }
 
 .site-description,
@@ -1119,7 +1122,7 @@ p.entry-meta {
 }
 
 .entry-footer .entry-meta {
-	border-top: 2px solid #f5f5f5;
+	border-top: 1px solid #EBEBEB;
 	padding-top: 24px;
 }
 
@@ -1179,16 +1182,11 @@ p.entry-meta {
 }
 
 .entry-comments {
-	padding: 40px;
-}
-
-.comment-header {
-	font-size: 16px;
+	padding: 20px 0;
 }
 
 li.comment {
-	background-color: #f5f5f5;
-	border: 2px solid #fff;
+	border: 1px solid #EBEBEB;
 	border-right: none;
 }
 
@@ -1233,13 +1231,14 @@ li.comment {
 	padding: 24px;
 }
 
+a.comment-reply-link,
+a.comment-edit-link {
+	color: #006621;
+}
+
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
-
-.sidebar {
-	font-size: 16px;
-}
 
 .sidebar li {
 	border-bottom: 1px dotted #ddd;
@@ -1338,6 +1337,36 @@ li.comment {
 .site-footer a:hover{
 	color: #333;
 }
+
+
+/* # Ads Panel
+---------------------------------------------------------------------------------------------------- */
+
+.roadblock-left,
+.adsense336-block-left {
+	float: left;
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+
+.roadblock-right,
+.adsense336-block-right {
+	float: right;
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
+.leader-lu {
+	border-bottom: 1px solid #ebebeb;
+	padding: 15px 0;
+	text-align: center;	
+}
+
+.leaderboard{
+	margin: 0 0 20px 0;
+	padding: 0;
+}
+
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
@@ -1496,28 +1525,3 @@ li.comment {
 }
 
 
-/*  **/
-
-.adsense336block-left, 
-.adsense336block-right {
-	    max-width: 336px;
-    width: 100%;
-    float: left;
-    margin-bottom: 30px;
-    margin-right: 10px;
-}
-
-.adsense336block-right {
-	float: right;
-}
-
-.leader-lu{
-	text-align: center;
-	border-bottom: 1px solid #ebebeb;
-	padding: 15px 0;
-}
-
-.leaderboard{
-	margin: 0 0 20px 0;
-	padding: 0;
-}
