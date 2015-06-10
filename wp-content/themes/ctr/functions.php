@@ -31,6 +31,16 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 
+
+//
+add_filter( 'genesis_header', 'custom_search' );
+function custom_search() {
+	echo "<div class='header-search'>
+		  	<img src='http://localhost/wp/wp-content/themes/ctr/images/search.png' />
+	</div>
+	";
+}	
+
 /* # Content Area
 ---------------------------------------------------------------------------------------------------- */
 
@@ -52,7 +62,7 @@ function b3m_prefix_breadcrumb( $args ) {
 // Breadcrumbs Home
 add_filter( 'genesis_breadcrumb_args', 'b3m_home_text_breadcrumb' );
 function b3m_home_text_breadcrumb( $args ) {
-  $args['home'] = 'WP';
+  $args['home'] = 'Inicio';
   return $args;
 }
 
@@ -102,10 +112,13 @@ function sp_footer_creds_text() {
 ---------------------------------------------------------------------------------------------------- */
 
 // Links Ads
+add_action('genesis_after_header', 'leader_lu');
 function leader_lu() {
 	echo "
 		<div class='leader-lu'>
-			<img src='http://localhost/wp/wp-content/themes/ctr/images/728x15.png' />
+			<div class='wrap'>
+				<img src='http://localhost/wp/wp-content/themes/ctr/images/728x15.png' />
+			</div>
 		</div>
 	";
 }

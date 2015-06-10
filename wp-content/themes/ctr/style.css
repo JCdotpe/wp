@@ -469,13 +469,13 @@ th {
 
 .site-inner,
 .wrap {
-	margin: 0 auto;
+	margin: 0;
 	max-width: 1200px;
 }
 
 .site-inner {
 	clear: both;
-	padding-top: 20px;
+	margin: 20px 30px 0px 131px;
 }
 
 /* ## Column Widths and Positions
@@ -872,7 +872,9 @@ img.alignright,
 }
 
 .site-header .wrap {
-	padding: 0;
+	max-width: 100%;
+	padding: 0px 30px 0px 15px;
+	width: 100%;
 }
 
 /* ## Title Area
@@ -881,13 +883,11 @@ img.alignright,
 .title-area {
 	float: left;
 	padding: 10px 0;
-	width: 360px;
 	text-align: center;
+	margin-right: 20px;
 }
 
-.header-full-width .title-area {
-	width: 100%;
-}
+
 
 .site-title {
 	font-size: 32px;
@@ -898,6 +898,10 @@ img.alignright,
 .site-title a,
 .site-title a:hover {
 	color: #404040;
+}
+
+.header-search {
+	padding: 14px 0px 0 0;
 }
 
 .header-image .site-title > a {
@@ -1359,7 +1363,13 @@ a.comment-edit-link {
 .leader-lu {
 	border-bottom: 1px solid #ebebeb;
 	padding: 15px 0;
-	text-align: center;	
+}
+
+.leader-lu .wrap {
+	margin: 0px auto;
+	width: 100%;
+	padding: 0 30px 0 113px;
+	max-width: 100%;
 }
 
 .leaderboard{
@@ -1374,7 +1384,8 @@ a.comment-edit-link {
 @media only screen and (max-width: 1200px) {
 
 	.site-inner,
-	.wrap {
+	.wrap,
+	.leader-lu {
 		max-width: 960px;
 	}
 
@@ -1398,8 +1409,7 @@ a.comment-edit-link {
 	.footer-widgets-1,
 	.footer-widgets-2,
 	.footer-widgets-3,
-	.sidebar-primary,
-	.title-area {
+	.sidebar-primary {
 		width: 300px;
 	}
 
