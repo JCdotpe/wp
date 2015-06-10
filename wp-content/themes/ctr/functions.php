@@ -168,6 +168,7 @@ function roadblock_top() {
 		<div class='roadblock-right'>
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
 		</div>
+		<br class='clear' />
 	";
 }
 
@@ -180,6 +181,7 @@ function roadblock_bottom() {
 		<div class='roadblock-right'>
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
 		</div>
+		<br class='clear' />
 	";
 }
 

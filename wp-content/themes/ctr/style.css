@@ -119,6 +119,9 @@ input[type="search"] {
 	display: table;
 }
 
+.clear {
+	clear: both;
+}
 
 /* # Defaults
 ---------------------------------------------------------------------------------------------------- */
@@ -403,10 +406,6 @@ input:hover[type="submit"],
 .button:hover {
 	background-color: #e5554e;
 	color: #fff;
-}
-
-.entry-content {
-	clear: both;
 }
 
 .entry-content .button:hover {
@@ -1112,10 +1111,6 @@ img.alignright,
 
 /* ## Entry Meta
 --------------------------------------------- */
-
-.entry-footer {
-	clear: both;
-}
 
 p.entry-meta {
 	margin-bottom: 0;
