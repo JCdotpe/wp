@@ -97,6 +97,29 @@ function gt_review_next_link_text() {
 // Remove comment form
 remove_action( 'genesis_comment_form', 'genesis_do_comment_form' );
 
+/* # Aside
+---------------------------------------------------------------------------------------------------- */
+
+
+// Social Left
+function share_aside() {
+	echo '
+		<section id="share-social-aside" class="widget widget_text share-aside">
+			<div class="widget-wrap">
+				<div class="textwidget">
+					<ul>
+						<li><a class="share-link share-facebook" href="http://www.facebook.com/sharer.php?u='.get_permalink().'" rel="nofollow" target="_blank">Facebook</a></li>
+						<li><a class="share-link share-twitter" href="https://twitter.com/share?url='.get_permalink().'&text='.get_the_title().'" rel="nofollow" target="_blank">Twitter</a></li>
+						<li><a class="share-link share-google" href="https://plus.google.com/share?url='.get_permalink().'" rel="nofollow" target="_blank">Google+</a></li>
+						<li><a class="share-link share-linkedin" href="http://www.linkedin.com/shareArticle?url='.get_permalink().'&title='.get_the_title().'" rel="nofollow" target="_blank">Linkedin</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+	';
+}
+add_filter('genesis_before_sidebar_widget_area', 'share_aside');
 
 /* # Footer
 ---------------------------------------------------------------------------------------------------- */

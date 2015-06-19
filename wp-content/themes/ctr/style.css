@@ -1373,6 +1373,34 @@ a.comment-edit-link {
 }
 
 
+/* # Style
+---------------------------------------------------------------------------------------------------- */
+
+a.share-link {
+	padding: 5px 8px;
+  color: white;
+  font-size: 12px;
+  border-radius: 3px;
+  margin-right: 2px;
+}
+
+.share-facebook {
+	background: #2d4372;
+}
+
+.share-twitter {
+	background: #41B7D8;
+}
+
+.share-google {
+	background: #D64937;
+}
+
+.share-linkedin {
+	background: #007bb6;
+}
+
+
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
