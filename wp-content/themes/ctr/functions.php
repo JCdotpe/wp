@@ -26,6 +26,12 @@ function crunchify_script_remove_header() {
       wp_deregister_script( 'jquery-ui' );
 }
 
+// Add font awesome css
+add_action( 'wp_enqueue_scripts', 'font_awesome_style_sheet' );
+function font_awesome_style_sheet() {
+	wp_enqueue_style( 'font-awesome-stylesheet', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), PARENT_THEME_VERSION );
+}
+
 // Remove Emoji
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -41,6 +47,53 @@ function custom_search() {
 	";
 }	
 
+//
+add_filter( 'genesis_header', 'custom_media' );
+function custom_media() {
+	echo '<div class="custom-media">
+		  	<ul>
+		  		<li><a class="media-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+		  		<li><a class="media-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+		  		<li><a class="media-gplus" href="#"><i class="fa fa-google-plus"></i></a></li>
+		  	</ul>
+	</div>
+	';
+}	
+
+//
+add_filter( 'genesis_header', 'custom_nav' );
+function custom_nav() {
+echo '
+<aside class="widget-area header-widget-area">
+	<section id="nav-user" class="widget nav-user">
+		<div class="widget-wrap">
+			<nav class="nav-header" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+				<ul class="menu genesis-nav-menu">
+					
+
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-convocatorias">
+	<a href="#"><i class="fa fa-th"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">INEI</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">SUNAT</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">RENIEC</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">MINEDU</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">SUNAT</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">JUNTOS</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">JNE</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">ONPE</a></li>
+	</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom"><a class="user-login" title="aa" href="#">Iniciar Sesión</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+</aside>
+
+';
+}
+
 /* # Content Area
 ---------------------------------------------------------------------------------------------------- */
 
@@ -48,7 +101,12 @@ function custom_search() {
 add_filter( 'genesis_post_info', 'sp_post_info_filter' );
 function sp_post_info_filter($post_info) {
 if ( !is_page() ) {
-	$post_info = '[post_date"] [post_edit]';
+	$post_info = '<i class="fa fa-bullhorn"></i> [post_categories before=""] <i class="fa fa-clock-o"></i> [post_date"] [post_edit]';
+	$post_info .= '<aside class="shares"><ul><li><a class="share-link share-facebook" href="http://www.facebook.com/sharer.php?u='.get_permalink().'" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i> Compartir en Facebook</a></li>
+						<li><a class="share-link share-twitter" href="https://twitter.com/share?url='.get_permalink().'&text='.get_the_title().'" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i> Compartir en Twitter</a></li>
+						<li><a class="share-link share-google" href="https://plus.google.com/share?url='.get_permalink().'" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i> Compartir en Google+</a></li>
+						<li><a class="share-link share-linkedin" href="http://www.linkedin.com/shareArticle?url='.get_permalink().'&title='.get_the_title().'" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i> Compartir en Linkedin</a></li>
+					</ul></aside>';
 	return $post_info;
 }}
 
@@ -75,7 +133,7 @@ function b3m_change_separator_breadcrumb( $args ) {
 
 // Custom post meta function
 function be_post_meta_filter($post_meta) {
-	$post_meta = '[post_tags before="Tags: "]';
+	$post_meta = '<i class="fa fa-tags"></i> [post_tags before="Tags: "]';
 	return $post_meta;
 }
 add_filter('genesis_post_meta', 'be_post_meta_filter');
@@ -101,25 +159,133 @@ remove_action( 'genesis_comment_form', 'genesis_do_comment_form' );
 ---------------------------------------------------------------------------------------------------- */
 
 
-// Social Left
-function share_aside() {
+// Subscribe Left
+function subscribe_aside() {
 	echo '
-		<section id="share-social-aside" class="widget widget_text share-aside">
+		<section id="subscribe-aside" class="widget widget_text subscribe-aside">
 			<div class="widget-wrap">
+				<h4 class="widgettitle"><i class="fa fa-envelope-o"></i> Recibir Ofertas Similares</h4>
 				<div class="textwidget">
-					<ul>
-						<li><a class="share-link share-facebook" href="http://www.facebook.com/sharer.php?u='.get_permalink().'" rel="nofollow" target="_blank">Facebook</a></li>
-						<li><a class="share-link share-twitter" href="https://twitter.com/share?url='.get_permalink().'&text='.get_the_title().'" rel="nofollow" target="_blank">Twitter</a></li>
-						<li><a class="share-link share-google" href="https://plus.google.com/share?url='.get_permalink().'" rel="nofollow" target="_blank">Google+</a></li>
-						<li><a class="share-link share-linkedin" href="http://www.linkedin.com/shareArticle?url='.get_permalink().'&title='.get_the_title().'" rel="nofollow" target="_blank">Linkedin</a></li>
-					</ul>
+					<p>Suscríbete a nuestro boletín de correo electrónico para recibir ofertas de empleo y consejos útiles para mejorar tu carrera profesional. Enviamos todos los Martes.</p>
+					<form action="" method="post" id="subscribe-aside" name="subscribe-aside" class="validate">
+					    <input name="EMAIL" type="text" placeholder="email address">
+					    <button class="submit" type="submit">Suscribirse</button>
+					  </form>
 				</div>
 			</div>
 		</section>
 
 	';
 }
-add_filter('genesis_before_sidebar_widget_area', 'share_aside');
+add_filter('genesis_before_sidebar_widget_area', 'subscribe_aside');
+
+
+// Display related posts in Genesis based on Category
+function related_posts_categories() {
+if ( is_single ( ) ) {
+global $post;
+$count = 0;
+$postIDs = array( $post->ID );
+$related = '';
+$cats = wp_get_post_categories( $post->ID );
+$catIDs = array( );{
+foreach ( $cats as $cat ) {
+$catIDs[] = $cat;
+}
+$args = array(
+'category__in' => $catIDs,
+'post__not_in' => $postIDs,
+'showposts' => 10,
+'ignore_sticky_posts' => 1,
+'orderby' => 'rand',
+'tax_query' => array(
+array(
+'taxonomy' => 'post_format',
+'field' => 'slug',
+'terms' => array(
+'post-format-link',
+'post-format-status',
+'post-format-aside',
+'post-format-quote' ),
+'operator' => 'NOT IN'
+)
+)
+);
+$cat_query = new WP_Query( $args );
+if ( $cat_query->have_posts() ) {
+while ( $cat_query->have_posts() ) {
+$cat_query->the_post();
+$related .= '<li><a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to' . get_the_title() . '">' . get_the_title() . '</a></li>';
+}
+}
+}
+if ( $related ) {
+	$category = get_the_category(); 
+printf( '<section id="related-category-aside" class="widget widget_text related-category-aside">
+		 	<div class="widget-wrap">
+		 		<h4><i class="fa fa-send-o"></i> Convocatorias '.$category[0]->cat_name.'</h4>
+		 		<div class="textwidget">
+					<ul>%s</ul>
+				</div>
+		</section>', $related );
+}
+wp_reset_query();
+}
+}
+add_action( 'genesis_before_sidebar_widget_area', 'related_posts_categories' );
+
+
+
+// Display related posts in Genesis based on Tags
+function related_posts_tags () {
+if ( is_single ( ) ) {
+global $post;
+$count = 0;
+$postIDs = array( $post->ID );
+$related = '';
+$tags = wp_get_post_tags( $post->ID );
+foreach ( $tags as $tag ) {
+$tagID[] = $tag->term_id;
+}
+$args = array(
+'tag__in' => $tagID,
+'post__not_in' => $postIDs,
+'showposts' => 6,
+'ignore_sticky_posts' => 1,
+'tax_query' => array(
+array(
+'taxonomy' => 'post_format',
+'field' => 'slug',
+'terms' => array(
+'post-format-link',
+'post-format-status',
+'post-format-aside',
+'post-format-quote'
+),
+'operator' => 'NOT IN'
+)
+)
+);
+$tag_query = new WP_Query( $args );
+if ( $tag_query->have_posts() ) {
+while ( $tag_query->have_posts() ) {
+$tag_query->the_post();
+$related .= '<li><a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to' . get_the_title() . '">' . get_the_title() . '</a></li>';
+$postIDs[] = $post->ID;
+$count++;
+}
+}
+if ( $related ) {
+printf( '<aside id="related-tags" class="related-tags">
+		 	<h3>Convocatorias similares</h3>
+		 	<ul>%s</ul>
+		 </aside>', $related );
+}
+wp_reset_query();
+}
+}
+add_action( 'genesis_entry_footer', 'related_posts_tags' );
+
 
 /* # Footer
 ---------------------------------------------------------------------------------------------------- */
