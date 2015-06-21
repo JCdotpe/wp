@@ -2,6 +2,9 @@
 //* Start the engine
 include_once( get_template_directory() . '/lib/init.php' );
 
+require_once(TEMPLATEPATH.'/lib/init.php');
+require_once(STYLESHEETPATH.'/lib/init.php');
+
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'CTR Genesis Theme' );
 define( 'CHILD_THEME_URL', 'http://jc.pe' );
@@ -26,6 +29,16 @@ function crunchify_script_remove_header() {
       wp_deregister_script( 'jquery-ui' );
 }
 
+// Load js files
+add_action('genesis_after_footer', 'crunchify_script_add_body');
+function crunchify_script_add_body() {
+      wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' );
+      wp_register_script( 'main', CHILD_URL .'/js/main.js' );
+
+      wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array( 'jquery' ), '1.11.1', false );
+      wp_enqueue_script( 'main', CHILD_URL .'/js/main.js' );
+}
+
 // Add font awesome css
 add_action( 'wp_enqueue_scripts', 'font_awesome_style_sheet' );
 function font_awesome_style_sheet() {
@@ -41,10 +54,21 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 //
 add_filter( 'genesis_header', 'custom_search' );
 function custom_search() {
-	echo "<div class='header-search'>
-		  	<img src='http://localhost/wp/wp-content/themes/ctr/images/search.png' />
-	</div>
-	";
+	echo '
+
+<aside class="widget-area header-widget-area header-search">
+	<section id="header-search-custom" class="widget widget_search">
+		<div class="widget-wrap">
+			<form method="get" class="search-form" action="http://localhost/wp/" role="search">
+				<input class="search" name="s" placeholder="Buscar convocatorias por institución pública, área, profesión, salario ..." type="search">
+				<button class="submit" type="submit"><i class="fa fa-search"></i></button>
+				<input value="Search" type="submit">
+			</form>
+		</div>
+	</section>
+</aside>
+
+	';
 }	
 
 //
@@ -64,7 +88,7 @@ function custom_media() {
 add_filter( 'genesis_header', 'custom_nav' );
 function custom_nav() {
 echo '
-<aside class="widget-area header-widget-area">
+<aside class="widget-area header-widget-area header-user">
 	<section id="nav-user" class="widget nav-user">
 		<div class="widget-wrap">
 			<nav class="nav-header" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
@@ -96,6 +120,20 @@ echo '
 
 /* # Content Area
 ---------------------------------------------------------------------------------------------------- */
+
+
+// Load iframe convocatorias
+add_action('genesis_after_header', 'iframe_load');
+function iframe_load() {
+
+      echo '
+      <div class="iframe-load">
+			<div class="menu-wrap">
+				<iframe id="iframe-ajax-load" src="" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" style="width: calc(100% - 80px); height: calc(100% - 120px); overflow: scroll"></iframe>
+				<button class="close-button" id="close-button" onclick="close_menu()">Close Menu</button>
+			</div>
+      </div>';
+}
 
 // Custom post info
 add_filter( 'genesis_post_info', 'sp_post_info_filter' );

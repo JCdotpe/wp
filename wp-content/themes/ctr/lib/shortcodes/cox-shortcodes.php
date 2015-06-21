@@ -55,7 +55,7 @@ function shortcode_iframe_load( $atts, $content = null ) {
     extract(shortcode_atts(array(
         'link'      => '#',
     ), $atts));
-	$out = "<button id='iframe_".get_the_ID()."' type='button' onclick='iframe_load(this.id)' class=\"btn btn-link iframe-button\" value=\"" .$link. "\"><i class='fa fa-bullhorn'></i> " .do_shortcode($content). "</button>  <div class='share-entry'><a href='http://www.facebook.com/sharer.php?u=".get_permalink()."' target='_blank' title='Share this page on Facebook'><i class='fa fa-facebook-square'></i> Compartir</a> <a href='http://www.linkedin.com/shareArticle?mini=true&url=".get_permalink()."' target='_blank'><i class='fa fa-linkedin-square'></i> Linkedin</a> <a href='http://twitter.com/share?url=".get_permalink()."' target='_blank' title='Tweet this page on Twitter'><i class='fa fa-twitter-square'></i> Tweet</a> <a href='https://plusone.google.com/_/+1/confirm?hl=en&url=".get_permalink()."' target='_blank' title='Plus one this page on Google'><i class='fa fa-google-plus-square'></i> Google +1</a></div>";
+	$out = "<button id='iframe_".get_the_ID()."' type='button' onclick='iframe_load(this.id)' class=\"iframe-button\" value=\"" .$link. "\"><i class='fa fa-bullhorn'></i> " .do_shortcode($content). "</button>";
     return $out;
 }
 add_shortcode('iframe_load', 'shortcode_iframe_load');
