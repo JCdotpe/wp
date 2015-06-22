@@ -76,7 +76,7 @@ add_filter( 'genesis_header', 'custom_media' );
 function custom_media() {
 	echo '<div class="custom-media">
 		  	<ul>
-		  		<li><a class="media-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+		  		<li><a class="media-facebook" href="https://www.facebook.com/convocatoria.pe"><i class="fa fa-facebook"></i></a></li>
 		  		<li><a class="media-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
 		  		<li><a class="media-gplus" href="#"><i class="fa fa-google-plus"></i></a></li>
 		  	</ul>
@@ -108,7 +108,7 @@ echo '
 		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">ONPE</a></li>
 	</ul>
 </li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom"><a class="user-login" title="aa" href="#">Iniciar Sesión</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-user"><a class="user-login" title="aa" href="#">Iniciar Sesión</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -129,7 +129,7 @@ function iframe_load() {
       echo '
       <div class="iframe-load">
 			<div class="menu-wrap">
-				<iframe id="iframe-ajax-load" src="" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" style="width: calc(100% - 80px); height: calc(100% - 120px); overflow: scroll"></iframe>
+				<iframe id="iframe-ajax-load" src="" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" style="width: calc(100% - 80px); height: calc(100% - 0px); overflow: scroll"></iframe>
 				<button class="close-button" id="close-button" onclick="close_menu()">Close Menu</button>
 			</div>
       </div>';
@@ -140,10 +140,10 @@ add_filter( 'genesis_post_info', 'sp_post_info_filter' );
 function sp_post_info_filter($post_info) {
 if ( !is_page() ) {
 	$post_info = '<i class="fa fa-bullhorn"></i> [post_categories before=""] <i class="fa fa-clock-o"></i> [post_date"] [post_edit]';
-	$post_info .= '<aside class="shares"><ul><li><a class="share-link share-facebook" href="http://www.facebook.com/sharer.php?u='.get_permalink().'" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i> Compartir en Facebook</a></li>
-						<li><a class="share-link share-twitter" href="https://twitter.com/share?url='.get_permalink().'&text='.get_the_title().'" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i> Compartir en Twitter</a></li>
-						<li><a class="share-link share-google" href="https://plus.google.com/share?url='.get_permalink().'" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i> Compartir en Google+</a></li>
-						<li><a class="share-link share-linkedin" href="http://www.linkedin.com/shareArticle?url='.get_permalink().'&title='.get_the_title().'" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i> Compartir en Linkedin</a></li>
+	$post_info .= '<aside class="shares"><ul><li><a class="share-link share-facebook" href="http://www.facebook.com/sharer.php?u='.get_permalink().'" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i> Comparte en Facebook</a></li>
+						<li><a class="share-link share-twitter" href="https://twitter.com/share?url='.get_permalink().'&text='.get_the_title().'" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i> Comparte en Twitter</a></li>
+						<li><a class="share-link share-google" href="https://plus.google.com/share?url='.get_permalink().'" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i> Comparte en Google+</a></li>
+						<li><a class="share-link share-linkedin" href="http://www.linkedin.com/shareArticle?url='.get_permalink().'&title='.get_the_title().'" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i> Comparte en Linkedin</a></li>
 					</ul></aside>';
 	return $post_info;
 }}
@@ -440,7 +440,7 @@ function adsense336_bottom() {
 }
 
 
-
+if ( is_single ( ) ) {
 
 $i = rand(1, 7);
 
@@ -478,4 +478,7 @@ switch ($i) {
         add_filter('genesis_before_entry_content', 'roadblock_top');
         add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
         break;                    
+}
+
+
 }

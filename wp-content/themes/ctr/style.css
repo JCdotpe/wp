@@ -908,7 +908,7 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: #f1f1f1;
+	background-color: #f0f1f3;
 	border-bottom: 1px solid #e5e5e5;
 }
 
@@ -923,9 +923,10 @@ img.alignright,
 
 .title-area {
 	float: left;
-	padding: 10px 0;
+	padding: 0;
 	text-align: center;
 	margin-right: 20px;
+	width: 95px;
 }
 
 
@@ -956,6 +957,11 @@ transition: border-color 0.3s ease 0s;
 padding: 0px 0px 0px 10px;
 margin: 0px;
 height: 34px !important;	
+}
+
+.header-search input.search:hover,
+.header-search input.search:focus {
+	border: 1px solid #008CF9;
 }
 
 .custom-media {
@@ -1696,6 +1702,30 @@ a.share-link i {
 
 @media only screen and (max-width: 960px) {
 
+.site-header .wrap {
+    padding: 0px 5%;
+}
+
+	.site-inner {
+		margin: 20px 0;
+	}
+
+	.open-iframe .iframe-load {
+	    top: 0px;
+	}	
+
+	.custom-media {
+		display: none;
+	}
+
+	.admin-bar.open-iframe .iframe-load {
+	    top: 32px;
+	}	
+
+	.leader-lu .wrap {
+		padding: 0 5%;
+	}
+
 	.site-inner,
 	.wrap {
 		max-width: 800px;
@@ -1714,12 +1744,53 @@ a.share-link i {
 	.sidebar-sidebar-content .content,
 	.sidebar-sidebar-content .content-sidebar-wrap,
 	.site-header .widget-area,
-	.title-area {
+	.title-area,
+	.site-header aside.widget-area {
 		width: 100%;
 	}
 
-	.site-header .wrap {
-		padding: 20px 5%;
+	.title-area {
+		margin: 0;
+	}
+
+	.site-header aside.widget-area {
+		top: 0;
+	}
+
+	.header-search input.search {
+		width: calc(100% - 70px);
+	}
+
+	.genesis-nav-menu .sub-menu {
+		margin-left: 15px;
+	}
+
+	.site-header ul.genesis-nav-menu {
+		text-align: left;
+	}
+
+	.site-header ul.genesis-nav-menu .menu-user {
+		display: none;
+	}
+
+	.site-header aside.header-user {
+    	width: 100px;
+    	top: 10px;
+    	left: 24px;
+    	position: absolute;
+	}
+
+	.site-header aside.header-user {
+		top: 20px;
+	}	
+
+	.admin-bar .site-header aside.header-user {
+		top: 50px;
+	}
+
+	.site-title {
+		margin: 0px auto;
+		width: 95px;
 	}
 
 	.header-image .title-area {
@@ -1747,7 +1818,8 @@ a.share-link i {
 	}
 
 	.site-header .search-form {
-		margin: 16px auto;
+		margin: 10px auto 20px;
+		text-align: left;
 	}
 
 	.genesis-nav-menu li.right {
