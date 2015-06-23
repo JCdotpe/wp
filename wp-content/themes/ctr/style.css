@@ -1765,7 +1765,8 @@ a.share-link i {
 		margin-left: 15px;
 	}
 
-	.site-header ul.genesis-nav-menu {
+	.site-header ul.genesis-nav-menu,
+	.nav-user .genesis-nav-menu .menu-item {
 		text-align: left;
 	}
 
@@ -1781,11 +1782,11 @@ a.share-link i {
 	}
 
 	.site-header aside.header-user {
-		top: 20px;
+		top: 18px;
 	}	
 
 	.admin-bar .site-header aside.header-user {
-		top: 50px;
+		top: 40px;
 	}
 
 	.site-title {

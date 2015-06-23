@@ -76,9 +76,9 @@ add_filter( 'genesis_header', 'custom_media' );
 function custom_media() {
 	echo '<div class="custom-media">
 		  	<ul>
-		  		<li><a class="media-facebook" href="https://www.facebook.com/convocatoria.pe"><i class="fa fa-facebook"></i></a></li>
-		  		<li><a class="media-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-		  		<li><a class="media-gplus" href="#"><i class="fa fa-google-plus"></i></a></li>
+		  		<li><a class="media-facebook" href="https://www.facebook.com/convocatoria.pe" rel="nofollow"><i class="fa fa-facebook"></i></a></li>
+		  		<li><a class="media-twitter" href="https://twitter.com/convocatoriape" rel="nofollow"><i class="fa fa-twitter"></i></a></li>
+		  		<li><a class="media-gplus" href="https://plus.google.com/+convocatoriape/" rel="nofollow"><i class="fa fa-google-plus"></i></a></li>
 		  	</ul>
 	</div>
 	';
@@ -205,10 +205,14 @@ function subscribe_aside() {
 				<h4 class="widgettitle"><i class="fa fa-envelope-o"></i> Recibir Ofertas Similares</h4>
 				<div class="textwidget">
 					<p>Suscríbete a nuestro boletín de correo electrónico para recibir ofertas de empleo y consejos útiles para mejorar tu carrera profesional. Enviamos todos los Martes.</p>
-					<form action="" method="post" id="subscribe-aside" name="subscribe-aside" class="validate">
-					    <input name="EMAIL" type="text" placeholder="email address">
+					<form action="//convocatoria.us11.list-manage.com/subscribe/post?u=814bba40d5cf620e6a3f88aa6&amp;id=fdc3714501" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					    <input name="EMAIL" type="text" placeholder="Ingresar correo electrónico">
 					    <button class="submit" type="submit">Suscribirse</button>
 					  </form>
+
+
+
+
 				</div>
 			</div>
 		</section>
