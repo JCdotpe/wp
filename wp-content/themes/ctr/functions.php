@@ -56,7 +56,7 @@ add_filter( 'genesis_header', 'custom_search' );
 function custom_search() {
 	echo '
 
-<aside class="widget-area header-widget-area header-search">
+<aside class="header-search">
 	<section id="header-search-custom" class="widget widget_search">
 		<div class="widget-wrap">
 			<form method="get" class="search-form" action="http://localhost/wp/" role="search">
@@ -85,7 +85,7 @@ function custom_media() {
 }	
 
 //
-add_filter( 'genesis_header', 'custom_nav' );
+// add_filter( 'genesis_header', 'custom_nav' );
 function custom_nav() {
 echo '
 <aside class="widget-area header-widget-area header-user">
@@ -171,7 +171,7 @@ function b3m_change_separator_breadcrumb( $args ) {
 
 // Custom post meta function
 function be_post_meta_filter($post_meta) {
-	$post_meta = '<i class="fa fa-tags"></i> [post_tags before="Tags: "]';
+	$post_meta = '<i class="fa fa-bookmark"></i> [post_tags before="Tags: "]';
 	return $post_meta;
 }
 add_filter('genesis_post_meta', 'be_post_meta_filter');
@@ -204,7 +204,7 @@ function subscribe_aside() {
 			<div class="widget-wrap">
 				<h4 class="widgettitle"><i class="fa fa-envelope-o"></i> Recibir Ofertas Similares</h4>
 				<div class="textwidget">
-					<p>Suscríbete a nuestro boletín de correo electrónico para recibir ofertas de empleo y consejos útiles para mejorar tu carrera profesional. Enviamos todos los Martes.</p>
+					<p>Suscríbete a nuestro boletín de correo electrónico para recibir ofertas de empleo y consejos útiles para potenciar tu carrera profesional. Enviamos todos los Martes.</p>
 					<form action="//convocatoria.us11.list-manage.com/subscribe/post?u=814bba40d5cf620e6a3f88aa6&amp;id=fdc3714501" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 					    <input name="EMAIL" type="text" placeholder="Ingresar correo electrónico">
 					    <button class="submit" type="submit">Suscribirse</button>
@@ -265,7 +265,7 @@ if ( $related ) {
 	$category = get_the_category(); 
 printf( '<section id="related-category-aside" class="widget widget_text related-category-aside">
 		 	<div class="widget-wrap">
-		 		<h4><i class="fa fa-send-o"></i> Convocatorias '.$category[0]->cat_name.'</h4>
+		 		<h4><i class="fa fa-link"></i> Convocatorias '.$category[0]->cat_name.'</h4>
 		 		<div class="textwidget">
 					<ul>%s</ul>
 				</div>
@@ -335,7 +335,41 @@ add_action( 'genesis_entry_footer', 'related_posts_tags' );
 // Custom footer
 add_filter( 'genesis_footer_creds_text', 'sp_footer_creds_text' );
 function sp_footer_creds_text() {
-	echo '<div class="creds"><p><a href="#" class="top">Subir &uarr;</a></p></div>';
+	echo '<div class="creds one-half first">
+			<p><b>Convocatoria.pe</b> es una plataforma para encontrar trabajo en el sector público del Perú. Utilice nuestro motor de búsqueda de convocatorias de personal para encontrar ofertas de empleos en entidades públicas, municipales y gubernamentales.</p>
+		  </div>
+
+		  <div class="one-half">
+		  	<ul class="footer-nav">
+		  		<li><a href="#">Terms</a></li>
+		  		<li><a href="#">Privacidad</a></li>
+		  		<li><a href="#">Suscribirse</a></li>
+		  		<li><a href="#">Publicidad</a></li>
+		  		<li><a href="#">Blog</a></li>
+		  		<li><a href="#">Acerca de</a></li>
+		  	</ul>
+
+		  	<br class="clear" />
+
+			<ul class="footer-social">
+				<li><a href="#" rel="nofollow" target="_social"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+				<li><a href="#" rel="nofollow" target="_social"><i class="fa fa-youtube-square fa-2x"></i></a></li>
+				<li><a href="#" rel="nofollow" target="_social"><i class="fa fa-pinterest-square fa-2x"></i></a></li>
+				<li><a href="http://www.convocatoria.pe/feed/" rel="nofollow" target="_social"><i class="fa fa-rss-square fa-2x"></i></a></li>
+				<li><a href="https://plus.google.com/+convocatoriape" rel="nofollow" target="_social"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+				<li><a href="https://twitter.com/convocatoriape" rel="nofollow" target="_social"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+				<li><a href="https://www.facebook.com/convocatoria.pe" rel="nofollow" target="_social"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+			</ul>
+
+		  </div>
+
+		  <hr class="clear-hr" />
+
+		  <div class="one-third first"><p>© 2015 Convocatoria.pe</p></div>
+		  <div class="one-third top"><p><a href="#">↑ Volver arriba</a></p></div>
+		  <div class="one-third text-right"><p>Made in Perú</p></div>		  		  
+
+		  ';
 }
 
 
@@ -444,7 +478,7 @@ function adsense336_bottom() {
 }
 
 
-if ( is_single ( ) ) {
+//if ( is_single ( ) ) {
 
 $i = rand(1, 7);
 
@@ -485,4 +519,4 @@ switch ($i) {
 }
 
 
-}
+//}
