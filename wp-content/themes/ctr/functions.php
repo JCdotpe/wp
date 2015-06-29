@@ -26,7 +26,7 @@ add_theme_support( 'custom-background' );
 add_action('wp_enqueue_scripts', 'crunchify_script_remove_header');
 function crunchify_script_remove_header() {
       wp_deregister_script( 'jquery' );
-      wp_deregister_script( 'jquery-ui' );
+      wp_deregister_script( 'comment-reply' );
 }
 
 // Load js files
@@ -376,29 +376,107 @@ function sp_footer_creds_text() {
 /* # CTR Ads
 ---------------------------------------------------------------------------------------------------- */
 
+
+
+
 // Links Ads
 add_action('genesis_after_header', 'leader_lu');
 function leader_lu() {
 	echo "
 		<div class='leader-lu'>
 			<div class='wrap'>
-				<img src='http://localhost/wp/wp-content/themes/ctr/images/728x15.png' />
-			</div>
-		</div>
 	";
+
+
+
+$ip = $_SERVER['REMOTE_ADDR']; 
+
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "
+			<img src='http://localhost/wp/wp-content/themes/ctr/images/728x15.png' />
+		";
+	}
+	else {
+		echo '
+
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- CTR convocatoria.pe 728x15 -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:15px"
+			     data-ad-client="ca-pub-1445607604292298"
+			     data-ad-slot="7135890368"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+
+		';
+	}
+
+	echo "</div></div>";
 }
 
 // Wide Skyscraper
 function sidebar_160(){
 	echo "
-		<div class='sidebar-160-left'><img src='http://localhost/wp/wp-content/themes/ctr/images/160x600.png' /></div>
+		<div class='sidebar-160-left'>
 	";
+
+	
+	$ip = $_SERVER['REMOTE_ADDR']; 	
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "<img src='http://localhost/wp/wp-content/themes/ctr/images/160x600.png' />";
+	}
+	else {
+		echo '
+
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- CTR convocatoria.pe 160x600 -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:160px;height:600px"
+			     data-ad-client="ca-pub-1445607604292298"
+			     data-ad-slot="9949755967"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+
+		';
+	}
+
+	echo "</div>";
 }
 
 // Leaderboard
 function leaderboard_top() {
 	echo "
-		<div class='leaderboard'><img src='http://localhost/wp/wp-content/themes/ctr/images/728x90.png' /></div>
+		<div class='leaderboard'>
+	";
+
+	
+	$ip = $_SERVER['REMOTE_ADDR']; 	
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "<img src='http://localhost/wp/wp-content/themes/ctr/images/728x90.png' />";
+	}
+	else {
+		echo '
+
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- CTR convocatoria.pe 728x90 -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:90px"
+			     data-ad-client="ca-pub-1445607604292298"
+			     data-ad-slot="3903222367"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+
+		';
+	}	
+
+	echo "
+		</div>
 	";
 }
 
@@ -406,9 +484,56 @@ function leaderboard_top() {
 function roadblock_vertical_left() {
 	echo "
 		<div class='roadblock-left'>
-			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
-			<br /><br />
-			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
+	";
+
+	
+	$ip = $_SERVER['REMOTE_ADDR']; 	
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "
+					<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
+		";
+	}
+	else {
+		echo '
+
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- CTR convocatoria.pe 336x280 R_V_L -->
+		<ins class="adsbygoogle"
+		     style="display:inline-block;width:336px;height:280px"
+		     data-ad-client="ca-pub-1445607604292298"
+		     data-ad-slot="9810155167"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+
+		';
+	}		
+
+	echo "<br><br>";
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "
+					<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
+		";
+	}
+	else {
+		echo '
+
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- CTR convocatoria.pe 336x280 R_V_L -->
+		<ins class="adsbygoogle"
+		     style="display:inline-block;width:336px;height:280px"
+		     data-ad-client="ca-pub-1445607604292298"
+		     data-ad-slot="9810155167"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+
+		';
+	}		
+
+	echo "
 		</div>
 	";
 }
@@ -417,10 +542,58 @@ function roadblock_vertical_left() {
 function roadblock_vertical_right() {
 	echo "
 		<div class='roadblock-right'>
-			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
-			<br /><br />
-			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
-		</div>
+			
+		";
+
+	
+	$ip = $_SERVER['REMOTE_ADDR']; 		
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "
+					<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
+		";
+	}
+	else {
+		echo '
+
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- CTR convocatoria.pe 336x280 R_V_R -->
+		<ins class="adsbygoogle"
+		     style="display:inline-block;width:336px;height:280px"
+		     data-ad-client="ca-pub-1445607604292298"
+		     data-ad-slot="2286888367"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+
+		';
+	}		
+
+	echo "<br><br>";
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "
+					<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
+		";
+	}
+	else {
+		echo '
+
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- CTR convocatoria.pe 336x280 R_V_R -->
+		<ins class="adsbygoogle"
+		     style="display:inline-block;width:336px;height:280px"
+		     data-ad-client="ca-pub-1445607604292298"
+		     data-ad-slot="2286888367"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+
+		';
+	}		
+
+	echo "	
+	</div>
 	";
 }
 
@@ -428,10 +601,66 @@ function roadblock_vertical_right() {
 function roadblock_top() {
 	echo "
 		<div class='roadblock-left'>
+	";
+
+	
+	$ip = $_SERVER['REMOTE_ADDR']; 		
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
+		";
+	}
+	else {
+		echo '
+
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- CTR convocatoria.pe 336x280_top_right -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:336px;height:280px"
+			     data-ad-client="ca-pub-1445607604292298"
+			     data-ad-slot="5240354766"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+
+		';
+	}	
+
+	echo "
 		</div>
+	";
+
+	echo "
 		<div class='roadblock-right'>
+	";
+
+	
+	$ip = $_SERVER['REMOTE_ADDR']; 		
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
+		";
+	}
+	else {
+		echo '
+
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- CTR convocatoria.pe 336x280_top_right -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:336px;height:280px"
+			     data-ad-client="ca-pub-1445607604292298"
+			     data-ad-slot="5240354766"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+
+		';
+	}	
+
+
+	echo "
 		</div>
 		<br class='clear' />
 	";
@@ -441,10 +670,66 @@ function roadblock_top() {
 function roadblock_bottom() {
 	echo "
 		<div class='roadblock-left'>
+	";
+
+	
+	$ip = $_SERVER['REMOTE_ADDR']; 		
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
+		";
+	}
+	else {
+		echo '
+
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- CTR convocatoria.pe 336x280_bottom_left -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:336px;height:280px"
+			     data-ad-client="ca-pub-1445607604292298"
+			     data-ad-slot="2147287566"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+
+		';
+	}	
+
+	echo "
 		</div>
+	";
+
+	echo "
 		<div class='roadblock-right'>
+	";
+
+	
+	$ip = $_SERVER['REMOTE_ADDR']; 		
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
+		";
+	}
+	else {
+		echo '
+
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- CTR convocatoria.pe 336x280_bottom_right -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:336px;height:280px"
+			     data-ad-client="ca-pub-1445607604292298"
+			     data-ad-slot="3624020769"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+
+		';
+	}	
+
+
+	echo "
 		</div>
 		<br class='clear' />
 	";
@@ -454,7 +739,33 @@ function roadblock_bottom() {
 function adsense336_top_left() {
 	echo "
 		<div class='adsense336-block-left'>
+		";
+
+	
+	$ip = $_SERVER['REMOTE_ADDR']; 		
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
+		";
+	}
+	else {
+		echo '
+
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- CTR convocatoria.pe 336x280_top_left -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:336px;height:280px"
+			     data-ad-client="ca-pub-1445607604292298"
+			     data-ad-slot="6717087967"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+
+		';
+	}			
+
+	echo "
 		</div>
 	";
 }
@@ -463,7 +774,33 @@ function adsense336_top_left() {
 function adsense336_top_right() {
 	echo "
 		<div class='adsense336-block-right'>
+	";
+
+	
+	$ip = $_SERVER['REMOTE_ADDR']; 		
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
+		";
+	}
+	else {
+		echo '
+
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- CTR convocatoria.pe 336x280_top_right -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:336px;height:280px"
+			     data-ad-client="ca-pub-1445607604292298"
+			     data-ad-slot="5240354766"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+
+		';
+	}		
+
+	echo"
 		</div>
 	";
 }
@@ -472,13 +809,37 @@ function adsense336_top_right() {
 function adsense336_bottom() {
 	echo "
 		<div class='adsense336-block'>
+	";
+
+	
+	$ip = $_SERVER['REMOTE_ADDR']; 		
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
+		";
+	}
+	else {
+		echo '
+
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- CTR convocatoria.pe 336x280_bottom -->
+		<ins class="adsbygoogle"
+		     style="display:inline-block;width:336px;height:280px"
+		     data-ad-client="ca-pub-1445607604292298"
+		     data-ad-slot="3763621564"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+
+		';
+	}	
+
+	echo "
 		</div>
 	";
 }
 
-
-//if ( is_single ( ) ) {
 
 $i = rand(1, 7);
 
@@ -519,4 +880,3 @@ switch ($i) {
 }
 
 
-//}

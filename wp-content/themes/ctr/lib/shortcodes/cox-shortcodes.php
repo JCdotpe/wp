@@ -10,7 +10,7 @@ function cox_contact( $atts, $content = null ) {
     
     return $out;
 }
-add_shortcode('contactform', 'cox_contact');
+//add_shortcode('contactform', 'cox_contact');
 
 // MEMBERS ONLY
 

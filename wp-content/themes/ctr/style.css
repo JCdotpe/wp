@@ -348,6 +348,10 @@ textarea {
 	width: 100%;
 }
 
+.error404 input {
+	width: 80%;
+}
+
 input:focus,
 textarea:focus {
 	border: 1px solid #999;
@@ -512,12 +516,12 @@ th {
 .site-inner,
 .wrap {
 	margin: 0;
-	max-width: 1200px;
+	max-width: 1100px;
 }
 
 .site-inner {
 	clear: both;
-	margin: 20px 30px 20px 131px;
+	margin: 20px 30px 20px 95px;
 }
 
 /* ## Column Widths and Positions
@@ -673,7 +677,6 @@ th {
 	margin-bottom: 20px;
 }
 
-.archive-description,
 .author-box {
 	background-color: #fff;
 	font-size: 16px;
@@ -932,7 +935,7 @@ img.alignright,
 	padding: 0;
 	text-align: center;
 	margin-right: 20px;
-	width: 95px;
+	width: 60px;
 }
 
 
@@ -1006,7 +1009,7 @@ margin-left: 10px;
 }
 
 .header-image .site-title > a {
-	background: url(images/logo.png) no-repeat left;
+	background: url(images/logo.png) -37px 12px no-repeat;
 	float: left;
 	min-height: 60px;
 	width: 100%;
@@ -1442,6 +1445,7 @@ p.entry-meta .entry-time {
 }
 
 .shares ul li {
+	width: 24.591%;
 	display: inline-block;
 }
 
@@ -1694,7 +1698,7 @@ ul.footer-social li {
 }
 
 .site-footer .wrap {
-		margin: 20px 30px 0px 131px;
+	margin: 20px 30px 0px 95px;
 	max-width: 1200px;
 }
 
@@ -1732,7 +1736,7 @@ ul.footer-social li {
 .leader-lu .wrap {
 	margin: 0px auto;
 	width: 100%;
-	padding: 0 30px 0 113px;
+	padding: 0 30px 0 78px;
 	max-width: 100%;
 }
 
@@ -1750,6 +1754,8 @@ ul.footer-social li {
 }
 
 a.share-link {
+	text-align: center;
+	display: block;
 	padding: 5px 8px;
   color: white;
   font-size: 12px;
