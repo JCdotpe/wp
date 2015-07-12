@@ -179,7 +179,7 @@ a:hover {
 }
 
 p {
-	margin: 0 0 28px;
+	margin: 0 0 20px;
 	padding: 0;
 }
 
@@ -1291,7 +1291,7 @@ top: 3px;
 	position: fixed;
 	width: 100%;
 	z-index: 9999;
-	top: 110px;
+	top: 100px;
 }
 
 .open-iframe .header-ads{
@@ -1714,6 +1714,10 @@ ul.footer-social li {
 /* # Ads Panel
 ---------------------------------------------------------------------------------------------------- */
 
+.admin-bar.open-iframe .iframe-load {
+	    top: 132px;
+	}	
+
 .roadblock-left,
 .adsense336-block-left {
 	float: left;
@@ -1745,12 +1749,23 @@ ul.footer-social li {
 	padding: 0;
 }
 
+.leaderboard-header .wrap {
+	margin: 5px auto;
+	width: 728px;
+	height: 90px;
+}
+
 
 /* # Style
 ---------------------------------------------------------------------------------------------------- */
 
-.iframe-button {
-	background: green;
+.iframe-button,
+.iframe-button:hover,
+.iframe-button:focus {
+	background: none;
+	color: #1a0dab;
+	font-size: small;
+	padding: 0;
 }
 
 a.share-link {
@@ -1827,6 +1842,8 @@ a.share-link i {
 
 @media only screen and (max-width: 960px) {
 
+	
+
 .site-header .wrap {
     padding: 0px 5%;
 }
@@ -1834,6 +1851,39 @@ a.share-link i {
 .site-footer .wrap {
 	margin: 0;
 	padding: 0px 5%;
+}
+
+.site-footer .wrap .text-right {
+	display: none;
+}
+
+.site-footer p {
+	text-align: center;
+}
+
+.site-footer ul.footer-nav {
+	float: none;
+	display: block;
+	text-align: center;
+	border-top: 1px solid #C7C7C7;
+	padding-top: 20px;
+}
+
+.site-footer ul.footer-social {
+	float: none;
+	display: block;
+	text-align: center;
+	margin-bottom: 22px;	
+}
+
+.site-footer ul.footer-nav li,
+.site-footer ul.footer-social li {
+	float: none;
+	display: inline-block;
+}
+
+.site-footer {
+	padding: 20px 0 0 0;
 }
 
 	.site-inner {
@@ -1883,11 +1933,25 @@ a.share-link i {
 		margin: 0;
 	}
 
-
+.site-header aside.header-search {
+	top: 0;
+	width: 100%;
+}
 
 	.header-search input.search {
-		width: calc(100% - 70px);
+		width: calc(100% - 63px);
 	}
+
+.site-header aside.header-widget-area ul.genesis-nav-menu > li {
+	margin: 0;
+	padding: 0;
+	height: auto !important;
+}
+
+.site-header ul.genesis-nav-menu li:first-child a {
+	padding: 0;
+	margin: 0;
+}
 
 	.genesis-nav-menu .sub-menu {
 		margin-left: 15px;
@@ -1902,10 +1966,10 @@ a.share-link i {
 		display: none;
 	}
 
-	.site-header aside.header-widget-area {
+	.site-header .wrap aside.header-widget-area {
     	width: 100px;
     	top: 10px;
-    	left: 24px;
+    	left: 38px;
     	position: absolute;
 	}
 

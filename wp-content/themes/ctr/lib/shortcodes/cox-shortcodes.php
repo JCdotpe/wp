@@ -55,7 +55,7 @@ function shortcode_iframe_load( $atts, $content = null ) {
     extract(shortcode_atts(array(
         'link'      => '#',
     ), $atts));
-	$out = "<button id='iframe_".get_the_ID()."' type='button' onclick='iframe_load(this.id)' class=\"iframe-button\" value=\"" .$link. "\"><i class='fa fa-bullhorn'></i> " .do_shortcode($content). "</button>";
+	$out = "<p><button id='iframe_".get_the_ID()."' type='button' onclick='iframe_load(this.id)' class=\"iframe-button\" value=\"" .$link. "\">" .do_shortcode($content). "</button></p>";
     return $out;
 }
 add_shortcode('iframe_load', 'shortcode_iframe_load');

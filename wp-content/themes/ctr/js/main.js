@@ -3,6 +3,7 @@
 
  	contentHeader = document.querySelector( '.site-header' );
  	contentAds = document.querySelector( '.leader-lu' );
+ 	contentAdsHeader = document.querySelector( '.leaderboard-header' );
 
 	contentHeader.addEventListener( 'click', function(ev) {
 		var target = ev.target;
@@ -17,6 +18,13 @@
 			close_menu();
 		}
 	});
+
+	contentAdsHeader.addEventListener( 'click', function(ev) {
+		var target = ev.target;
+		if ($('body').hasClass('open-iframe')) {
+			close_menu();
+		}
+	});	
 
 });
 

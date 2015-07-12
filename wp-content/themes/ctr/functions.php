@@ -59,7 +59,7 @@ function custom_search() {
 <aside class="header-search">
 	<section id="header-search-custom" class="widget widget_search">
 		<div class="widget-wrap">
-			<form method="get" class="search-form" action="http://localhost/wp/" role="search">
+			<form method="get" class="search-form" action="http://www.convocatoria.pe/" role="search">
 				<input class="search" name="s" placeholder="Buscar convocatorias por institución pública, área, profesión, salario ..." type="search">
 				<button class="submit" type="submit"><i class="fa fa-search"></i></button>
 				<input value="Search" type="submit">
@@ -274,7 +274,7 @@ printf( '<section id="related-category-aside" class="widget widget_text related-
 wp_reset_query();
 }
 }
-add_action( 'genesis_before_sidebar_widget_area', 'related_posts_categories' );
+add_action( 'genesis_after_sidebar_widget_area', 'related_posts_categories' );
 
 
 
@@ -367,7 +367,7 @@ function sp_footer_creds_text() {
 
 		  <div class="one-third first"><p>© 2015 Convocatoria.pe</p></div>
 		  <div class="one-third top"><p><a href="#">↑ Volver arriba</a></p></div>
-		  <div class="one-third text-right"><p>Made in Perú</p></div>		  		  
+		  <div class="one-third text-right made"><p>Made in Perú</p></div>		  		  
 
 		  ';
 }
@@ -376,7 +376,39 @@ function sp_footer_creds_text() {
 /* # CTR Ads
 ---------------------------------------------------------------------------------------------------- */
 
+// Leaderboard
+add_action( 'genesis_before_header', 'leaderboard_top_header' );
+function leaderboard_top_header() {
+	echo "
+		<div class='leaderboard-header'><div class='wrap'>
+	";
 
+	
+	$ip = $_SERVER['REMOTE_ADDR']; 	
+
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
+		echo "<img src='http://localhost/wp/wp-content/themes/ctr/images/728x90.png' />";
+	}
+	else {
+		echo '
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x90_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="7134596765"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+		';
+	}	
+
+	echo "
+		</div></div>
+	";
+}
 
 
 // Links Ads
@@ -392,7 +424,7 @@ function leader_lu() {
 $ip = $_SERVER['REMOTE_ADDR']; 
 
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/728x15.png' />
 		";
@@ -400,15 +432,15 @@ $ip = $_SERVER['REMOTE_ADDR'];
 	else {
 		echo '
 
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- CTR convocatoria.pe 728x15 -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:728px;height:15px"
-			     data-ad-client="ca-pub-1445607604292298"
-			     data-ad-slot="7135890368"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x15_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:15px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="5239061166"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 		';
 	}
@@ -425,7 +457,7 @@ function sidebar_160(){
 	
 	$ip = $_SERVER['REMOTE_ADDR']; 	
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "<img src='http://localhost/wp/wp-content/themes/ctr/images/160x600.png' />";
 	}
 	else {
@@ -456,21 +488,21 @@ function leaderboard_top() {
 	
 	$ip = $_SERVER['REMOTE_ADDR']; 	
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "<img src='http://localhost/wp/wp-content/themes/ctr/images/728x90.png' />";
 	}
 	else {
 		echo '
 
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- CTR convocatoria.pe 728x90 -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:728px;height:90px"
-			     data-ad-client="ca-pub-1445607604292298"
-			     data-ad-slot="3903222367"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x90_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="7134596765"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 		';
 	}	
@@ -489,7 +521,7 @@ function roadblock_vertical_left() {
 	
 	$ip = $_SERVER['REMOTE_ADDR']; 	
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "
 					<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
 		";
@@ -497,22 +529,22 @@ function roadblock_vertical_left() {
 	else {
 		echo '
 
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- CTR convocatoria.pe 336x280 R_V_L -->
-		<ins class="adsbygoogle"
-		     style="display:inline-block;width:336px;height:280px"
-		     data-ad-client="ca-pub-1445607604292298"
-		     data-ad-slot="9810155167"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 336x280_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="5657863566"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 		';
 	}		
 
 	echo "<br><br>";
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "
 					<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
 		";
@@ -520,15 +552,15 @@ function roadblock_vertical_left() {
 	else {
 		echo '
 
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- CTR convocatoria.pe 336x280 R_V_L -->
-		<ins class="adsbygoogle"
-		     style="display:inline-block;width:336px;height:280px"
-		     data-ad-client="ca-pub-1445607604292298"
-		     data-ad-slot="9810155167"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 336x280_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="5657863566"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 		';
 	}		
@@ -548,7 +580,7 @@ function roadblock_vertical_right() {
 	
 	$ip = $_SERVER['REMOTE_ADDR']; 		
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "
 					<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
 		";
@@ -556,22 +588,22 @@ function roadblock_vertical_right() {
 	else {
 		echo '
 
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- CTR convocatoria.pe 336x280 R_V_R -->
-		<ins class="adsbygoogle"
-		     style="display:inline-block;width:336px;height:280px"
-		     data-ad-client="ca-pub-1445607604292298"
-		     data-ad-slot="2286888367"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 336x280_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="5657863566"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 		';
 	}		
 
 	echo "<br><br>";
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "
 					<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
 		";
@@ -579,15 +611,15 @@ function roadblock_vertical_right() {
 	else {
 		echo '
 
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- CTR convocatoria.pe 336x280 R_V_R -->
-		<ins class="adsbygoogle"
-		     style="display:inline-block;width:336px;height:280px"
-		     data-ad-client="ca-pub-1445607604292298"
-		     data-ad-slot="2286888367"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 336x280_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="5657863566"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 		';
 	}		
@@ -606,7 +638,7 @@ function roadblock_top() {
 	
 	$ip = $_SERVER['REMOTE_ADDR']; 		
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
 		";
@@ -614,15 +646,15 @@ function roadblock_top() {
 	else {
 		echo '
 
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- CTR convocatoria.pe 336x280_top_right -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:336px;height:280px"
-			     data-ad-client="ca-pub-1445607604292298"
-			     data-ad-slot="5240354766"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 336x280_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="5657863566"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 		';
 	}	
@@ -638,7 +670,7 @@ function roadblock_top() {
 	
 	$ip = $_SERVER['REMOTE_ADDR']; 		
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
 		";
@@ -646,15 +678,15 @@ function roadblock_top() {
 	else {
 		echo '
 
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- CTR convocatoria.pe 336x280_top_right -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:336px;height:280px"
-			     data-ad-client="ca-pub-1445607604292298"
-			     data-ad-slot="5240354766"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 336x280_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="5657863566"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 		';
 	}	
@@ -675,7 +707,7 @@ function roadblock_bottom() {
 	
 	$ip = $_SERVER['REMOTE_ADDR']; 		
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
 		";
@@ -683,15 +715,15 @@ function roadblock_bottom() {
 	else {
 		echo '
 
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- CTR convocatoria.pe 336x280_bottom_left -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:336px;height:280px"
-			     data-ad-client="ca-pub-1445607604292298"
-			     data-ad-slot="2147287566"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 336x280_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="5657863566"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 		';
 	}	
@@ -707,7 +739,7 @@ function roadblock_bottom() {
 	
 	$ip = $_SERVER['REMOTE_ADDR']; 		
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
 		";
@@ -715,15 +747,15 @@ function roadblock_bottom() {
 	else {
 		echo '
 
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- CTR convocatoria.pe 336x280_bottom_right -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:336px;height:280px"
-			     data-ad-client="ca-pub-1445607604292298"
-			     data-ad-slot="3624020769"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 336x280_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="5657863566"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 		';
 	}	
@@ -744,7 +776,7 @@ function adsense336_top_left() {
 	
 	$ip = $_SERVER['REMOTE_ADDR']; 		
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
 		";
@@ -752,15 +784,15 @@ function adsense336_top_left() {
 	else {
 		echo '
 
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- CTR convocatoria.pe 336x280_top_left -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:336px;height:280px"
-			     data-ad-client="ca-pub-1445607604292298"
-			     data-ad-slot="6717087967"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 336x280_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="5657863566"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 		';
 	}			
@@ -779,7 +811,7 @@ function adsense336_top_right() {
 	
 	$ip = $_SERVER['REMOTE_ADDR']; 		
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
 		";
@@ -787,15 +819,15 @@ function adsense336_top_right() {
 	else {
 		echo '
 
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- CTR convocatoria.pe 336x280_top_right -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:336px;height:280px"
-			     data-ad-client="ca-pub-1445607604292298"
-			     data-ad-slot="5240354766"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 336x280_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="5657863566"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 		';
 	}		
@@ -814,7 +846,7 @@ function adsense336_bottom() {
 	
 	$ip = $_SERVER['REMOTE_ADDR']; 		
 
-	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.92.198') ) { 
+	if ( ($ip == '127.0.0.1') or ($ip == 'localhost') or ($ip == '::1') or ($ip == '192.168.0.26') or ($ip == '179.7.89.6') ) { 
 		echo "
 			<img src='http://localhost/wp/wp-content/themes/ctr/images/336x280.png' />
 		";
@@ -822,15 +854,15 @@ function adsense336_bottom() {
 	else {
 		echo '
 
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- CTR convocatoria.pe 336x280_bottom -->
-		<ins class="adsbygoogle"
-		     style="display:inline-block;width:336px;height:280px"
-		     data-ad-client="ca-pub-1445607604292298"
-		     data-ad-slot="3763621564"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 336x280_NCTR -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-1445607604292298"
+     data-ad-slot="5657863566"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 		';
 	}	
@@ -848,34 +880,34 @@ switch ($i) {
         break;
     case 1:
         add_filter('genesis_before_entry_content', 'roadblock_vertical_left');
-        add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
+        // add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
         break;
     case 2:
         add_filter('genesis_before_entry_content', 'roadblock_vertical_right');
-        add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
+        // add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
         break;
     case 3:
         add_action('genesis_before_loop', 'leaderboard_top');
         add_filter('genesis_after_entry_content', 'adsense336_bottom');
-        add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
+        // add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
         break;
     case 4:
         add_filter('genesis_after_entry_content', 'roadblock_bottom');
-        add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
+        // add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
         break;             
     case 5:
         add_filter('genesis_before_entry_content', 'adsense336_top_left');
         add_filter('genesis_after_entry_content', 'adsense336_bottom');
-        add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
+        // add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
         break;       
     case 6:
         add_filter('genesis_before_entry_content', 'adsense336_top_right');
         add_filter('genesis_after_entry_content', 'adsense336_bottom');
-        add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
+        // add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
         break;       
     case 7:
         add_filter('genesis_before_entry_content', 'roadblock_top');
-        add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
+        // add_filter('genesis_after_sidebar_widget_area', 'sidebar_160');
         break;                    
 }
 
